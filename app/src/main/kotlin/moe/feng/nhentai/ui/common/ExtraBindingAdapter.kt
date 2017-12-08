@@ -59,7 +59,7 @@ object ExtraBindingAdapter: AnkoLogger {
 		imageView.setImageDrawable(null)
 		if (book != null) {
 			imageView.background = TextDrawable.builder().buildRect(
-					book.title.firstWord(), ColorGenerator.MATERIAL.getColor(book))
+					book.title.firstWord()?: "", ColorGenerator.MATERIAL.getColor(book))
 			imageView.viewTreeObserver.addOnGlobalLayoutListener(
 					object : ViewTreeObserver.OnGlobalLayoutListener {
 						override fun onGlobalLayout() {
